@@ -1,0 +1,95 @@
+---
+title: "National Parks Analysis"
+author: "CANA Advisors"
+output: html_document
+---
+
+The national park visitors data set provides a picture of annual park visitors from 1904 to 2016. In this quick analysis, we'll create an interactive map that relays the number of park visitors by state in 2015. There are many mapping libraries available in R. For this analysis, we'll use leaflet, a popular JavaScript library for interactive maps: https://leafletjs.com/. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r libraries}
+library(ggplot2)
+library(data.table)
+library(dplyr)
+library(magrittr)
+library(tidyverse)
+
+library(rgdal)
+library(RColorBrewer)
+library(geojsonio)
+library(sf)
+library(leaflet)
+
+```
+
+```{r prepData}
+
+## Read in national park visitors dataset
+natparks <- fread("../data/NationalParkVisitors.csv")
+
+## Using base R dataset "state," create a reference dataset called stateMatch
+stateMatch <- data.frame(name = state.name,
+                         abb = state.abb)
+
+## Join full state names into the national park visitors data
+natparks %<>% 
+  left_join(select(stateMatch, name, abb), by = c("state" = "abb"))
+
+## Filter for 2015 data and count millions of visitors by state
+natparks %<>%
+  filter(year == 2015) %>%
+  group_by(name) %>%
+  summarise(milVisitors = round(sum(visitors)/1000000, 2)) 
+
+## Read in Spatial Polygon file to show US map in leaflet
+states <- geojsonio::geojson_read( "../data/us-states.geojson", what = "sp")
+
+## Check the class of the states object
+class(states)
+
+## Pull the visitors data into the states object for plotting
+states@data = data.frame(states@data, natparks[match(states@data[,"name"], natparks$name),])
+
+```
+
+
+```{r map}
+
+## Set bins for colorcoding the map by millions of visitors
+bins <- c(0, 1, 2, 5, 10, 20, 30, 40, Inf)
+pal <- colorBin("Greens", domain = states$milVisitors, bins = bins)
+
+## Create state labels for the plot
+labels <- sprintf(
+  "<strong>%s</strong><br/>%g million visitors in 2015 ",
+  states$name, 
+  states$milVisitors
+) %>% 
+  lapply(htmltools::HTML)
+
+## Plot the interactive map
+leaflet(states) %>%
+  setView(-96, 37.8, 4) %>%
+  addTiles() %>% 
+  addPolygons(fillColor = ~pal(milVisitors),
+              weight = 2,
+              opacity = 1,
+              color = "white",
+              dashArray = "3",
+              fillOpacity = 0.7,
+              highlight = highlightOptions(weight = 5,
+                                           color = "#666",
+                                           dashArray = "",
+                                           fillOpacity = 0.7,
+                                           bringToFront = TRUE),
+              label = labels,
+              labelOptions = labelOptions(style = list("font-weight" = "normal", padding = "3px 8px"),
+                                          textsize = "15px",
+                                          direction = "auto")) %>%
+  addLegend(pal = pal, values = ~density, opacity = 0.7,
+            title = NULL, position = "bottomright")
+
+```

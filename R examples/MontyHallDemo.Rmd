@@ -80,7 +80,7 @@ Let's take a closer look at these trials to see the convergence to the true winn
 
 ```{r}
 ## Plot 'convergence' to true winning proportions
-## Blue is switching doors, red is staying
+## Orange is switching doors, darkcyan is staying
 
 doors$index <- 1:n
 ggplot(doors) +

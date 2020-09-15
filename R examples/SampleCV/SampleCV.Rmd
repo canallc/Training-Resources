@@ -1,0 +1,72 @@
+---
+name: George
+surname: Dantzig
+position: "Mathematician"
+address: "Operations Research and Computer Science at Stanford University"
+phone: +1 22 3333 4444
+www: georgedantzig.com
+email: "George.Dantzig@gmail.com"
+twitter: georgedantzig
+github: georgedantzig
+linkedin: georgedantzig
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+# output: vitae::awesomecv
+# output: vitae::twentyseconds
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tidyverse)
+```
+
+# Some stuff about me
+
+ * I invented Linear Programming and developed the Simplex Algorithm.
+ * As a graduate student, I solved two of the most famous unsolved problems in statistics for homework.
+
+# Experience
+```{r}
+
+tribble(
+  ~ dates, ~ company, ~ role, 
+  "1960 - 1966", "Chair and Professor of the Operations Research Center", "UC-Berkeley", 
+  "1952 - 1960", "Research Mathematician", "RAND Corporation", 
+  "1946 - 1952", "Mathematical Advisor", "US Military", 
+  "1941 - 1946", "Chief of the Combat Analysis Branch",  "Army Air Forces", 
+  "1937 - 1939", "Junior Statistician","U.S. Bureau of Labor Statistics"
+  
+)  %>% 
+  detailed_entries(company, dates, role)
+
+```  
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Informal studies", "1936", "University of Maryland", "College Park, Maryland",
+  "Master of Physics", "1938", "University of Michigan", "Ann Arbor, Michigan",
+  "Phd", "1946", "University of California, Berkeley", "Berkeley, California"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Awards
+
+```{r}
+tribble(
+  ~Year, ~Award,
+  1986, "Silver Medal of the Operational Research Society (U.K.)",
+  1977, "National Academy of Sciences Award in Applied Mathematics and Numerical Analysis",
+  1976, "National Medal of Science",
+  1975, "John von Neumann Theory Prize",
+  1944, "War Department Exceptional Civilian Service Medal"
+) %>% 
+  brief_entries(Award, Year)
+
+```

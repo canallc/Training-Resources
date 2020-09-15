@@ -1,0 +1,26 @@
+# Pyomo data file created by SolverStudio
+
+set Spas :=  'Aqua-Spas' 'Hydro-Luxes';
+
+set Supplies :=  " - Pumps Req'd" " - Labor Req'd" " - Tubing Req'd";
+
+param available := 
+  " - Labor Req'd" 1566
+  " - Tubing Req'd" 2880
+  " - Pumps Req'd" 200
+;
+
+param profits := 
+  'Hydro-Luxes' 300
+  'Aqua-Spas' 350
+;
+
+param required := 
+  'Hydro-Luxes' " - Labor Req'd"  6
+  'Hydro-Luxes' " - Tubing Req'd"  16
+  'Aqua-Spas' " - Labor Req'd"  9
+  'Aqua-Spas' " - Pumps Req'd"  1
+  'Hydro-Luxes' " - Pumps Req'd"  1
+  'Aqua-Spas' " - Tubing Req'd"  12
+;
+

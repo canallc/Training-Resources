@@ -1,0 +1,160 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Walt}{DeGrange}
+%\title{Resumé title}                               % optional, remove / comment the line if not wanted
+\address{}{Chapel Hill, NC}{}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[cell]{919.442.8164}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+%\phone[fixed]{+2~(345)~678~901}
+%\phone[fax]{+3~(456)~789~012}
+\email{wdegrang@uark.edu}                               % optional, remove / comment the line if not wanted
+%\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+\social[linkedin]{https://www.linkedin.com/in/waltdegrange/}                        % optional, remove / comment the line if not wanted
+\social[twitter]{ltwalt}                             % optional, remove / comment the line if not wanted
+%\social[github]{jdoe}                              % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}
+\cventry{2003--2005}{Master of Science}{Naval Postgraduate School}{Monterey, CA}{}{Operations Research}  % 
+\cventry{1988--1992}{Bachelor of Engineering}{Vanderbilt University}{Nashville, TN}{}{Electrical Engineering}
+
+\section{Master Thesis}
+\cvitem{Title}{\emph{Optimizing Global Combat Logistics Force Support for Sea Base Operations}}
+\cvitem{Advisor}{Dr. Mathew Carlyle}
+\cvitem{Description}{The Navy has to choose the number of, and designs for, ships in the Combat Logistics Force (CLF), and then plan how to use them to provide logistical support to our Naval and seabasing platforms engaged in any variety of worldwide operations. CLF ships are very expensive to build and equip and the budget is limited --- this increases the pressure on buying and integrating the best CLF ships for the fleet so the Navy can continue to provide flexible support. This research used a global shortest network path algorithm combined with an innovative demand optimization model developed to analyze a mix of CLF ships with different speed and commodity capacities in support of both humanitarian and kinetic seabasing operations. Key readiness and mission effectiveness metrics were compared to determine if current CLF ships were capable of fulfilling commodity requirements or if new ships designs improved support and if so by how much.}
+
+\section{Experience}
+\subsection{Teaching/Research}
+\cventry{2015-Present}{Instructor}{University of Arkansas}{Fayetteville, AR}{}{Teaches courses in the online Master of Science in Operations Management (MSOM) program.\newline{}
+Courses taught:%
+\begin{itemize}%
+\item Introduction to Operations Management (OMGT5003)
+\item Cost Estimation Models (OMGT5433)
+\item Organizing for Change (OMGT5873)
+\end{itemize}}
+\cventry{2015--Present}{Executive Practicum Advisor}{Supply Chain Resource Cooperative (SCRC), Poole College of Management, NC State University}{Raleigh, NC}{}{Mentors, coaches and advises graduate student practicum teams taking the MBA Capstone Practicum Course required for a supply chain concentration. Assists students in developing analytical business acumen, leadership, communication, presentation, interpersonal and critical thinking skills. Develops and maintains productive collaborative working relationships between students, faculty, and SCRC industry partners.}
+\cventry{2011--2014}{Military Assistant Professor}{Naval Postgraduate School}{Monterey, CA}{}{Developed and taught five diverse graduate level logistics courses to one hundred and forty students. Principal Investigator (PI) for a three-year, \$500,000 research project (Replenishment at Sea Planner, RASP).\newline{}
+Courses taught:%
+\begin{itemize}%
+\item Introduction to Operations Analysis (OA1600)
+\item Introduction to Inventory Theory (OA3501)
+\item Joint and Combined Logistics (OA4611)
+\item Operational Logistics Models (OA4612)
+\item Operations Management (GB3042)
+\end{itemize}}
+
+\subsection{Practice}
+\cventry{2018--Present}{Director of Analytics Capabilities}{CANA Advisors}{Chapel Hill, NC}{}{The Director of Analytics Capabilities is the steward for CANA’s analytics capability. Responsible for the practice, people, and technologies that are needed to nurture a complete, best-in-class analytics capability.}
+\cventry{2014--2018}{Principal Operations Research Analyst}{CANA Advisors}{Chapel Hill, NC}{}{Leads operations research analysis across federal and commercial domains including operations research studies \& analysis, analysis of logistics systems, data and information-based decision support solutions, sports analytics and data quality \& analytic assessments. Responsibilities include providing leadership over technical team members, management of research, producing analysis and resulting technical products, and the creation of an entrepreneurial atmosphere. Analytics projects cover a wide range of analytical tools and methods (R, Python, Microsoft BI \& Excel, Machine Learning) and clients (professional sports teams, US Marine Corps, chemical manufacturer}
+\cventry{2008--2011}{Director of Operations Research and Systems Support Maritime}{NAVSUP Weapon Systems Support}{Mechanicsburg, PA}{}{Performed validation and verification of all Navy and Marine Corps aviation demand forecasting and inventory levels setting models. Directed analysis in determining model parameters for development and implementation of Navy Enterprise Resource Planning (ERP) system. Managed a portfolio of over ten simulation and optimization models. Supervised 32 operations research analysts in the performance of their duties.}
+% \cventry{2005--2007}{Regional Transportation Analyst}{NAVSUP Logistics Operations Center}{Norfolk, VA}{}{Conducted analysis and implemented models that minimized transportation cost and provided recommendations on Navy inventory positioning. Created models to analyze reverse logistics (retrograde) material.}
+
+%\section{Languages}
+%\cvitemwithcomment{Language 1}{Skill level}{Comment}
+%\cvitemwithcomment{Language 2}{Skill level}{Comment}
+%\cvitemwithcomment{Language 3}{Skill level}{Comment}
+
+\section{Analytic Tool Skills}
+Proficient in using: \\
+\cvlistdoubleitem{R}{R Shiny}
+\cvlistdoubleitem{Python}{JMP}
+\cvlistdoubleitem{Microsoft Excel}{Microsoft Power BI}
+\cvlistdoubleitem{LaTeX}{}
+
+%\section{Interests}
+%\cvitem{Running}{Description}
+%\cvitem{Sailing}{Description}
+%\cvitem{Sand Volleyball}{Description}
+
+\newpage
+
+\section{Professional Societies}
+\cvlistitem{Military Operations Research Society (MORS) - Course Director for Critical Skills for Analytics Professionals (CSAP)}
+\cvlistitem{INFORMS Military and Security Society (MAS) Treasurer and Secretary}
+
+\section{Volunteering}
+\cvlistdoubleitem{USO of North Carolina}{}
+
+
+\makeatletter
+\renewcommand\@biblabel[1]{}
+\makeatother
+
+% \section{References}
+% \begin{cvcolumns}
+%  \cvcolumn{Teaching}{\begin{itemize}\item Professor Rob Dell \\ Naval Postgraduate School\item Professor Greg Parnell \\ University of Arkansas\item Professor Rob Handsfield \\ NC State University \item Jennifer Ferat \\ MORS\end{itemize}}
+%   \cvcolumn{Practice}{\begin{itemize}\item Norm Reitter \\ CANA Advisors\item Harrison Schramm \\ CANA Advisors\end{itemize}(more upon request)}
+% \end{cvcolumns}
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\section{Presentations}
+\cventry{2018-2019}{A Day in the Life of an Analytics Professional}{UNC, NC State, UNC Wilmington, Wake Forest University}{}{}{}
+\cventry{2017}{Sports Analytics: Viable Career Path Or Something Really Smart People Made Up To Try To Get In The Game}{INFORMS Annual Meeting}{}{}{}
+\cventry{2017}{Predicting Collegiate Lacrosse Play Performance At The US Major League Lacrosse Level}{INFORMS Annual Meeting}{}{}{}
+\cventry{2016}{Coordinated Consumable Management Cost Business Analysis}{84th MORS Symposium}{}{}{}
+\cventry{2015}{Combining Simulation And Optimization To Increase Insights: USMC Maritime Prepositioning Force (MPF)
+Exercise Simulation and OptDef}{83th MORS Symposium}{}{}{}
+\cventry{2012}{Why Won't You Use My Model: Difficulties In Implementing Optimal Scheduling Models}{80th MORS Symposium}{}{}{}
+
+
+\end{document}
+
+
+%% end of file `template.tex'.
